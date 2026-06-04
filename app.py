@@ -2,8 +2,8 @@ import streamlit as st
 import joblib
 
 # Load the trained model and vectorizer
-model = joblib.load("spam_email_classifier_model.pkl")
-vectorizer = joblib.load("vectorizer.pkl")
+model = joblib.load("spam_email_classifier_model (1).pkl")
+vectorizer = joblib.load("vectorizer (1).pkl")
 
 st.title("Spam Email Classifier")
 st.markdown("Enter email text below to classify it as spam or legitimate.")
