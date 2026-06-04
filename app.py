@@ -5,8 +5,9 @@ import os
 @st.cache_resource
 def load_models():
     try:
-        model = joblib.load("spam_email_classifier_model (1).pkl")
-        vectorizer = joblib.load("vectorizer (1).pkl")
+        # Load the improved Naive Bayes model
+        model = joblib.load("naive_bayes_spam_classifier.pkl")
+        vectorizer = joblib.load("vectorizer_naive_bayes.pkl")
         return model, vectorizer
     except FileNotFoundError:
         st.error("⚠️ Model files not found. Ensure .pkl files are in the app directory.")
@@ -38,6 +39,7 @@ def is_valid_text(text):
 
 st.title("Spam Email Classifier")
 st.markdown("Enter email text below to classify it as spam or legitimate.")
+st.markdown("*Using improved Naive Bayes model for better accuracy*")
 
 model, vectorizer = load_models()
 
